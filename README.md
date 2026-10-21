@@ -243,6 +243,23 @@ Public entry points are `create_visualizer`, `DiagramConfig`, `ModelVisualizer`,
 `VisualizationReport`, `LLMGraphError`, and `constants`. A `py.typed` marker makes
 the inline annotations discoverable by type checkers.
 
+## Community
+
+Join the **llm_graph community on Slack** to stay in touch and help shape the
+library:
+
+- Discover upcoming features and enhancements.
+- Follow release announcements, known bugs, and bug fixes.
+- Share feedback, ask questions, and discuss use cases.
+
+**[Join the llm_graph Slack community](https://join.slack.com/t/nlpwiz-in/shared_invite/zt-4e8mpwh4w-rtC~Dqbpuj7ymFawVEXD6g)**
+
+Community participation and support are voluntary and best-effort. Do not share
+credentials, confidential information, or proprietary model data. Slack
+discussions supplement, rather than replace, repository issue reports and
+published release notes. Security-sensitive reports should use a private
+maintainer reporting channel, not a public community channel.
+
 ## Contributing
 
 Contributions are welcome in documentation, tests, architecture adapters,
@@ -260,8 +277,9 @@ schedule, versioning, and compatibility commitments are documented in
 
 ## License
 
-License terms have not yet been specified. This documentation does not grant
-redistribution rights. Model repositories and dependencies retain their own
+Licensed under the [MIT License](./LICENSE). Contributors retain their applicable
+copyright; see [Contribution licensing and responsibility](./CONTRIBUTING.md#contribution-licensing-and-responsibility).
+Third-party material, model repositories, and dependencies retain their own
 licenses and access conditions.
 
 ## Validation

@@ -7,6 +7,8 @@ name = "llm-graph"
 version = "0.1.0"
 description = "Inspect supported LLM architectures and generate Mermaid diagrams and structured layer metadata"
 readme = {file = "README.md", content-type = "text/markdown"}
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.14"
 dependencies = ["torch>=2.14.1", "transformers==5.19.0"]
 keywords = ["llm", "gemma", "mermaid", "pytorch", "model-architecture", "visualization", "quantization"]

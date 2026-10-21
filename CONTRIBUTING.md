@@ -31,6 +31,13 @@ where possible.
 
 ## Proposing changes
 
+For initial questions, feedback, and feature discussions, join the
+[llm_graph Slack community](https://join.slack.com/t/nlpwiz-in/shared_invite/zt-4e8mpwh4w-rtC~Dqbpuj7ymFawVEXD6g).
+Keep actionable bug reports and agreed feature proposals in repository issues
+so decisions remain discoverable outside Slack. Community support is
+best-effort; do not post confidential or security-sensitive information in
+public channels.
+
 For a new adapter, backend, dependency, or public API change, propose a bounded
 design first. Include the motivating use case, supported model/implementation
 versions, expected inputs/outputs, risks, and measurable acceptance criteria.
@@ -132,6 +139,52 @@ silently substitute formats. An execution backend requires a separate approved
 design for consent, input handling, mutation risks and resource limitations;
 the current graph-rendering protocol alone does not establish tracing support.
 
+## Contribution licensing and responsibility
+
+Contributors retain ownership of any copyright they hold in their contributions.
+By intentionally submitting material for inclusion in `llm_graph`, contributors
+agree to license that material under the project's [MIT License](./LICENSE).
+
+"llm_graph contributors" collectively refers to the respective copyright
+holders. It does not imply that copyright is assigned to the repository owner
+or to a separate legal entity.
+
+### Contributor responsibilities
+
+Contributors have primary responsibility for verifying the origin of, and their
+authority to submit, the material they contribute. By submitting a contribution,
+you confirm that:
+
+1. **Submission rights:** You created the material or have sufficient permission
+   to submit and license it under the project's MIT License.
+2. **Third-party rights:** To the best of your knowledge, the contribution does
+   not infringe copyright or other third-party rights, or breach confidentiality,
+   employment, or contractual obligations.
+3. **Disclosure and attribution:** You identify included third-party material,
+   its source, applicable license, and required notices. Third-party material
+   must remain clearly identified under its applicable terms.
+4. **License compatibility:** You do not submit material whose terms prohibit
+   its inclusion or distribution in this MIT-licensed project.
+5. **No concealment:** You do not knowingly remove required notices, misrepresent
+   authorship, or conceal restrictions affecting the contribution.
+6. **Correction of concerns:** If you discover a rights or licensing concern
+   after submission, you promptly notify the maintainers and reasonably cooperate
+   in investigating and resolving it.
+
+### Maintainer review
+
+Acceptance or publication of a contribution does not transfer its copyright to
+the repository owner or constitute independent legal clearance of the submitted
+material.
+
+Maintainers may request provenance or permission information and may reject,
+remove, or replace contributions with unresolved rights or licensing concerns.
+
+These contribution terms do not modify the MIT License, impose an
+indemnification obligation, or determine liability under applicable law.
+They do not eliminate any legal responsibilities of contributors, maintainers,
+or distributors.
+
 ## Pull request checklist
 
 - State the problem and scope, with before/after examples.
@@ -143,8 +196,8 @@ the current graph-rendering protocol alone does not establish tracing support.
 - Exclude secrets, user prompts, weights, generated reports, environments,
   `node_modules`, caches and `*.egg-info`.
 - Confirm that you have the right to contribute the code and any bundled material.
-  Contributions must be compatible with the project's published license; license
-  terms must be established before external contributions are incorporated.
+  Confirm compliance with the contribution licensing and responsibility terms
+  above, including third-party disclosures and required notices.
 
 Do not disclose security-sensitive reproductions in public issues. Use a private
 maintainer reporting channel and provide only the information needed to
