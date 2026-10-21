@@ -1,0 +1,9 @@
+{
+  "name": "llm-graph-validation",
+  "private": true,
+  "description": "Development-only Mermaid syntax validation for llm-graph",
+  "devDependencies": {
+    "jsdom": "^27.0.0",
+    "mermaid": "^11.12.0"
+  }
+}

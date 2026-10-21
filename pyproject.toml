@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-graph"
+version = "0.1.0"
+description = "Inspect supported LLM architectures and generate Mermaid diagrams and structured layer metadata"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.14"
+dependencies = ["torch>=2.14.1", "transformers==5.19.0"]
+keywords = ["llm", "gemma", "mermaid", "pytorch", "model-architecture", "visualization", "quantization"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Documentation",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = ["pyright>=1.1.400"]
+release = ["build>=1.2.2", "twine>=6.1"]
+
+[tool.setuptools.package-data]
+llm_graph = ["py.typed"]
+
+[tool.setuptools]
+packages = ["llm_graph"]
+package-dir = {llm_graph = "."}
+
+[tool.pyright]
+include = ["*.py"]
+pythonVersion = "3.14"
+typeCheckingMode = "basic"

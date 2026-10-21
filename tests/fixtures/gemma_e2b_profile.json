@@ -1,0 +1,32 @@
+{
+  "text_config": {
+    "hidden_size": 1536,
+    "intermediate_size": 6144,
+    "num_hidden_layers": 35,
+    "num_attention_heads": 8,
+    "num_key_value_heads": 1,
+    "head_dim": 256,
+    "hidden_size_per_layer_input": 256,
+    "num_kv_shared_layers": 20,
+    "use_double_wide_mlp": true,
+    "layer_types": [
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention",
+      "sliding_attention", "sliding_attention", "sliding_attention", "sliding_attention", "full_attention"
+    ]
+  },
+  "quantization_config": {
+    "quant_method": "gemma",
+    "num_bits": 4,
+    "quantize_embeddings": true,
+    "module_quant_configs": {
+      "embed_tokens": {"num_bits": 2},
+      "layers\\.(?:1[5-9]|2[0-9]|3[0-4])\\.mlp": {"num_bits": 2}
+    },
+    "modules_to_not_convert": ["lm_head"]
+  }
+}

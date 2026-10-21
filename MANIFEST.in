@@ -1,0 +1,3 @@
+include README.md CONTRIBUTING.md PUBLISHING.md DESIGN.md ERRORS.md
+include package.json package-lock.json
+recursive-include tests *.py *.mjs *.json
