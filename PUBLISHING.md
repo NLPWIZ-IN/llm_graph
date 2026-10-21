@@ -39,6 +39,24 @@ increment resets the patch component to zero. The highest-impact change in a
 release determines its version increment; a minor or major release may also
 include bug and security fixes.
 
+### Automated version checks
+
+The publishing workflow requires the GitHub Release tag to match the package
+version: version `1.2.3` must use tag `v1.2.3`. The candidate must be strictly
+newer than every version with published files in the project's PyPI history,
+including yanked releases. Equal or older versions are rejected.
+
+Versions are compared numerically using Python packaging version rules, not
+alphabetically. The workflow checks before building and again immediately before
+uploading. Network or response errors stop publication; a missing PyPI project
+(HTTP 404) permits an initial release. A missing project does not establish
+ownership or reserve its name.
+
+Publishing jobs are serialized within this repository. The checks do not
+provide an atomic lock against uploads from other repositories or manual
+publishers. This policy intentionally prevents older maintenance-line releases
+after a newer version has been published.
+
 ## Backward compatibility
 
 Compatibility commitments apply to documented public APIs, supported

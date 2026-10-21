@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-dev = ["pyright>=1.1.400"]
+dev = ["pyright>=1.1.400", "packaging>=24"]
 release = ["build>=1.2.2", "twine>=6.1"]
 
 [tool.setuptools.package-data]
