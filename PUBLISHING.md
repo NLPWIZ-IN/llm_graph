@@ -5,6 +5,13 @@ compatibility commitments for `llm-graph`. Release management, approval,
 publication, and maintenance of this policy are the responsibility of the
 repository owner.
 
+The official repository is
+[NLPWIZ-IN/llm_graph_view](https://github.com/NLPWIZ-IN/llm_graph_view).
+Release announcements and version-specific notes are published on its
+[GitHub Releases page](https://github.com/NLPWIZ-IN/llm_graph_view/releases).
+The repository name is distinct from the `llm-graph` distribution name and
+`llm_graph` Python import.
+
 ## Release schedule
 
 Starting in **November 2026**, regular releases are scheduled for the **third

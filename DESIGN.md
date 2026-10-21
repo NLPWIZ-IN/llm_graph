@@ -2,6 +2,11 @@
 
 Status: Gemma-only initial implementation; broader extension roadmap retained.
 
+Source repository:
+[NLPWIZ-IN/llm_graph_view](https://github.com/NLPWIZ-IN/llm_graph_view).
+Architecture proposals and implementation discussions are tracked in
+[repository issues](https://github.com/NLPWIZ-IN/llm_graph_view/issues).
+
 ## First-release scope override
 
 The initial implementation targets

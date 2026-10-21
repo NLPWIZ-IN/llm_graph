@@ -4,6 +4,9 @@
 Mermaid diagrams and structured layer metadata for technical documentation.**
 
 `llm-graph` is the distribution name; `llm_graph` is the Python import.
+The source repository is [NLPWIZ-IN/llm_graph_view](https://github.com/NLPWIZ-IN/llm_graph_view);
+the repository name does not change the distribution or import name.
+
 This alpha library turns an already loaded PyTorch/Transformers model into a
 read-only architecture report. Architecture-specific adapters interpret supported
 module layouts, a backend-neutral graph captures the findings, and a Mermaid
@@ -256,8 +259,10 @@ library:
 
 Community participation and support are voluntary and best-effort. Do not share
 credentials, confidential information, or proprietary model data. Slack
-discussions supplement, rather than replace, repository issue reports and
-published release notes. Security-sensitive reports should use a private
+discussions supplement, rather than replace,
+[repository issue reports](https://github.com/NLPWIZ-IN/llm_graph_view/issues) and
+[published release notes](https://github.com/NLPWIZ-IN/llm_graph_view/releases).
+Security-sensitive reports should use a private
 maintainer reporting channel, not a public community channel.
 
 ## Contributing

@@ -1,5 +1,9 @@
 # Contributing to llm-graph
 
+Development takes place in
+[NLPWIZ-IN/llm_graph_view](https://github.com/NLPWIZ-IN/llm_graph_view).
+The Python import remains `llm_graph`, and the distribution name remains `llm-graph`.
+
 ## Ways to contribute
 
 Help make supported LLM architectures inspectable, accurately documented, and
@@ -19,6 +23,9 @@ Useful contributions include:
 
 ## Reporting bugs
 
+Report reproducible, non-sensitive bugs through the
+[GitHub issue tracker](https://github.com/NLPWIZ-IN/llm_graph_view/issues).
+
 Include a minimal reproducer, the expected and actual behavior, the `llm-graph`,
 Python, PyTorch, and Transformers versions, and the model class and architecture
 profile. For coded failures, include the error code and relevant sanitized
@@ -33,7 +40,8 @@ where possible.
 
 For initial questions, feedback, and feature discussions, join the
 [llm_graph Slack community](https://join.slack.com/t/nlpwiz-in/shared_invite/zt-4e8mpwh4w-rtC~Dqbpuj7ymFawVEXD6g).
-Keep actionable bug reports and agreed feature proposals in repository issues
+Keep actionable bug reports and agreed feature proposals in
+[repository issues](https://github.com/NLPWIZ-IN/llm_graph_view/issues)
 so decisions remain discoverable outside Slack. Community support is
 best-effort; do not post confidential or security-sensitive information in
 public channels.

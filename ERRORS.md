@@ -3,6 +3,10 @@
 Status: catalog for the broader design, partially implemented in the Gemma-only release.
 See [DESIGN.md](./DESIGN.md) for architecture and invocation behavior.
 
+Report reproducible, non-sensitive error-handling problems in the
+[NLPWIZ-IN/llm_graph_view issue tracker](https://github.com/NLPWIZ-IN/llm_graph_view/issues),
+following the [bug-report guidance](./CONTRIBUTING.md#reporting-bugs).
+
 Implemented fatal codes are listed in the immutable `llm_graph.errors.CATALOG`:
 `E1001`, `E1101`-`E1105`, `E2001`-`E2004`, `E3001`-`E3003`, `E4005`,
 and `E5001`-`E5003` (each with prefix `LLMG-`). Codes for opaque-client
