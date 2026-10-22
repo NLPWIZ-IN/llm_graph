@@ -48,6 +48,25 @@ include bug and security fixes.
 
 ### Automated version checks
 
+Before any validation or build, the [publishing workflow](./.github/workflows/publish.yml)
+verifies the release source:
+
+- GitHub Releases marked as pre-releases are rejected and never published to PyPI.
+- The tagged release commit must be reachable from `main`. Tags on unmerged
+  feature-branch commits are rejected.
+
+These checks run when a release is published. They do not prevent creating,
+moving, or deleting tags. Protect release tags and the publishing environment
+with the repository settings below.
+
+The workflow then calls the reusable
+[Build and Test workflow](./.github/workflows/ci.yml) against the release commit.
+Dependency checks, type checking, distribution validation, and the complete test
+suite must pass before the release build can start. Failed or cancelled
+validation prevents downstream building and publication. This reruns validation;
+it does not rely on a previous pull-request run. The release build creates fresh
+distributions after validation rather than reusing CI's build artifacts.
+
 The publishing workflow requires the GitHub Release tag to match the package
 version: version `1.2.3` must use tag `v1.2.3`. The candidate must be strictly
 newer than every version with published files in the project's PyPI history,
