@@ -25,7 +25,7 @@ types and their resource limits are deferred. Unknown architectures and backend
 names fail explicitly; no fallback suggests those features are implemented.
 The runtime error catalog is a documented subset of the planned directory.
 All implemented runtime string vocabulary and text templates are centralized in
-`llm_graph/constants.py` as typed `Final[str]` values. Catalog definitions and
+`src/llm_graph/constants.py` as typed `Final[str]` values. Catalog definitions and
 invocation sites reference the same code constants; consumers and tests reuse the
 public `llm_graph.constants` module. AST-based tests forbid inline runtime strings
 outside that module, excluding Python docstrings and export declarations.
@@ -126,9 +126,10 @@ Architecture adapters own model semantics; rendering backends own output
 syntax. Shared constants and the error catalog remain dependency-light.
 
 Package the library as an installable distribution named `llm-graph`, exposing
-the Python package `llm_graph`. The planned `pyproject.toml` uses setuptools with
-an explicit mapping from the flat source directory to `llm_graph`, excluding
-tests and development dependencies from Python package discovery. Declare
+the Python package `llm_graph`. The `pyproject.toml` uses setuptools with
+package discovery under `src/`; all runtime modules and the `py.typed` marker
+live in `src/llm_graph/`, excluding tests, release scripts, and development
+dependencies from Python package discovery. Declare
 PyTorch/Transformers runtime dependencies and a `torchview` optional extra;
 Graphviz's system executable is a separately documented prerequisite for SVG.
 Dependency installation compatibility is distinct from verified adapter support.

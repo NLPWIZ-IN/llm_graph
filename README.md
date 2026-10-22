@@ -92,6 +92,13 @@ For development installation and test prerequisites, see
 [Contributing](./CONTRIBUTING.md). Package-index installation instructions apply
 once a release is published; this documentation does not assert PyPI availability.
 
+### Source layout
+
+Runtime code lives in [`src/llm_graph/`](./src/llm_graph/), including the
+`py.typed` marker. Tests, release scripts, and project metadata remain outside
+`src/`. The public import remains `llm_graph`; install the project before
+importing it from a source checkout.
+
 ## Quick start
 
 Pass an already loaded, supported model as `model_quantized`. The library does

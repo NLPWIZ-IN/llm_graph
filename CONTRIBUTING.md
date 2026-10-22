@@ -66,11 +66,12 @@ python -m pyright --pythonpath "$(python -c 'import sys; print(sys.executable)')
 Node dependencies are development-only Mermaid syntax validation tools.
 They are not needed by library users. Use an isolated development environment.
 
-The repository uses a flat package layout: Python modules are alongside the
-project manifest. Setuptools explicitly maps that directory to the import
-package `llm_graph`; tests, documentation, and Node dependencies are not Python
-subpackages. Install the project before running tests instead of relying on the
-working directory to resolve imports.
+The repository uses a `src` layout: all runtime Python modules and the
+`py.typed` marker live in `src/llm_graph/`. Setuptools discovers packages under
+`src/`; tests, release scripts, documentation, and Node dependencies remain at
+the project root and are not Python subpackages. Install the project before
+running tests instead of relying on the working directory to resolve imports.
+After changing the package layout, rerun the editable installation command above.
 
 ## Testing
 
@@ -109,7 +110,7 @@ live tensor values or measured memory consumption.
   the non-executing inspection path.
 - Use registered parameters/buffers for storage metadata. Avoid descriptors such
   as quantized embeddings' `weight`, which may dequantize a table.
-- Put runtime string identifiers and templates in `llm_graph/constants.py` as
+- Put runtime string identifiers and templates in `src/llm_graph/constants.py` as
   `Final[str]` values. Reuse existing constants; preserve released code meanings.
 - Keep types accurate; avoid blanket `Any` casts and suppressed diagnostics.
 - Use standard coded exceptions for expected boundary failures. Preserve causes
