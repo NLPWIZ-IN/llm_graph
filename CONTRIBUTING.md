@@ -102,7 +102,7 @@ live tensor values or measured memory consumption.
 
 ### Continuous integration
 
-The [Build and Test workflow](./.github/workflows/ci.yml) runs automatically only for pull
+The [Build and Test workflow](./.github/workflows/ci.yml) runs automatically for pull
 requests targeting `main`: when opened, reopened, or updated with new commits
 (`synchronize`). Pushes without an open pull request targeting `main`, direct
 pushes to `main`, and pull requests targeting other branches do not trigger CI.
@@ -118,6 +118,8 @@ test suite against the installed wheel rather than an editable checkout.
 CI does not publish packages or require PyPI credentials; publication remains
 in the separate release workflow. Using only pull-request events for automatic runs avoids
 duplicate push and pull-request runs for the same update.
+The publishing workflow also calls CI as a reusable workflow against the release
+commit. Release building and publication require that validation to succeed.
 
 ## Implementation standards
 

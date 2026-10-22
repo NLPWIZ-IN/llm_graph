@@ -12,7 +12,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  release-guard:
+    name: Verify release source
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reject pre-releases
+        if: github.event.release.prerelease
+        run: |
+          echo "::error::GitHub pre-releases are not published to PyPI. Publish a full release instead."
+          exit 1
+
+      - name: Check out release source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Require release commit on main
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Release commit $GITHUB_SHA is not reachable from main. Tag a commit that has been merged into main."
+            exit 1
+          fi
+          echo "Release commit $GITHUB_SHA is reachable from main."
+
+  validate:
+    name: Validate release
+    needs: release-guard
+    uses: ./.github/workflows/ci.yml
+
   build:
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Check out release source
