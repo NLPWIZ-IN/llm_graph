@@ -100,6 +100,25 @@ integration and rendering checks before submission. Report missing fixtures and
 skipped checks explicitly. Meta-model tests establish structural behavior, not
 live tensor values or measured memory consumption.
 
+### Continuous integration
+
+The [Build and Test workflow](./.github/workflows/ci.yml) runs automatically only for pull
+requests targeting `main`: when opened, reopened, or updated with new commits
+(`synchronize`). Pushes without an open pull request targeting `main`, direct
+pushes to `main`, and pull requests targeting other branches do not trigger CI.
+Manual runs are available for any branch containing the workflow through
+Actions > Build and Test > Run workflow > Use workflow from. The workflow must
+also exist on the default branch for manual dispatch to be available.
+Superseded runs on the same pull request or manually selected branch are cancelled.
+
+CI uses Ubuntu, Python 3.14, and Node.js 22. It installs the Mermaid validation
+dependencies, checks Python dependency consistency and source types, builds the
+source archive and wheel, validates distribution metadata, and runs the complete
+test suite against the installed wheel rather than an editable checkout.
+CI does not publish packages or require PyPI credentials; publication remains
+in the separate release workflow. Using only pull-request events for automatic runs avoids
+duplicate push and pull-request runs for the same update.
+
 ## Implementation standards
 
 - Preserve public behavior unless a change is intentional and documented.
