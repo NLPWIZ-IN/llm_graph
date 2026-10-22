@@ -31,10 +31,14 @@ release = ["build>=1.2.2", "twine>=6.1"]
 llm_graph = ["py.typed"]
 
 [tool.setuptools]
-packages = ["llm_graph"]
-package-dir = {llm_graph = "."}
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["llm_graph*"]
+namespaces = false
 
 [tool.pyright]
-include = ["*.py"]
+include = ["src/llm_graph"]
 pythonVersion = "3.14"
 typeCheckingMode = "basic"
